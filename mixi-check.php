@@ -3,7 +3,7 @@
 Plugin Name: mixi check plugin for wordpress
 Plugin URI: http://github.com/takimo/mixi-check-for-wordpress
 Description: mixi check plugin for wordpressはmixiチェックボタンをwordpressに簡単に配置することが出来るプラグインです。
-Version: 1.1
+Version: 1.2
 Author: Shinya Takimoto
 Author URI: http://takimo.net
 License: GPL2
@@ -78,7 +78,6 @@ function create_meta_property($metadata){
 function create_meta_name($metadata){
     $metatag = array();
     foreach($metadata as $key => $value){
-        if($key == MIXI_SETTINGS_KEY_MIXI_CONTENT_RATING && $value == "on") $value = 1;
         $element =  "<meta name=\"$key\" content=\"".htmlentities($value, ENT_QUOTES, mb_internal_encoding())."\" />";
         $metatag[] = $element;
     }
