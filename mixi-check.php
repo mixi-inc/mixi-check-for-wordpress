@@ -79,7 +79,7 @@ function create_meta_name($metadata){
     $metatag = array();
     foreach($metadata as $key => $value){
         if($key == MIXI_SETTINGS_KEY_MIXI_CONTENT_RATING && $value == "on") $value = 1;
-        $element =  "<meta property=\"$key\" content=\"".htmlentities($value, ENT_QUOTES, mb_internal_encoding())."\" />";
+        $element =  "<meta name=\"$key\" content=\"".htmlentities($value, ENT_QUOTES, mb_internal_encoding())."\" />";
         $metatag[] = $element;
     }
     return $metatag;
