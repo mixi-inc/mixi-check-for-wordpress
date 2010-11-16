@@ -247,7 +247,7 @@ function the_mixi_check_button_code(){
 
     if(!$data_key) return '<p>API KEYが設定されていません</p>';
     $html = array(
-        '<a href="http://mixi.jp/share.pl" class="mixi-check-button" data-key="'.$data_key.'" data-button="'.$data_button.'"data-url="'.$data_url.'">Check</a>',
+        '<a href="http://mixi.jp/share.pl" class="mixi-check-button" data-key="'.$data_key.'" data-button="'.$data_button.'" data-url="'.$data_url.'">Check</a>',
         '<script type="text/javascript" src="http://static.mixi.jp/js/share.js"></script>',
     );
     return implode('', $html);
