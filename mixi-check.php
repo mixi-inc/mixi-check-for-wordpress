@@ -253,6 +253,19 @@ function the_mixi_check_button_code(){
     return implode('', $html);
 }
 
+function get_the_mixi_favorite_button_code(){
+    echo the_mixi_favorite_button_code();
+}
+
+function the_mixi_favorite_button_code(){
+    $data_url = get_permalink();
+    $data_key = get_option(MIXI_SETTINGS_KEY_MIXI_CHECK_KEY);
+    if(!$data_key) return '<p>API KEYが設定されていません</p>';
+
+    $html = '<iframe scrolling="no" frameborder="0" allowTransparency="true" style="overflow:hidden; border:0; width:450px; height:80px" src="http://plugins.mixi.jp/favorite.pl?href='.$data_url.'&amp;service_key='.$data_key.'&amp;show_faces=true&amp;width=450"></iframe>';
+    return $html;
+}
+
 function get_the_excerpt_for_multibyte(){
     $text = get_the_content();
     $text = strip_tags($text);
