@@ -196,7 +196,7 @@ function mixicheck_plugin_options(){
 
 function mixicheck_plugin_widget(){
     if(get_option(MIXI_SETTINGS_KEY_MIXI_CHECK_KEY)){
-        $code = '<?php get_the_mixi_check_button_code(); ?>';
+        $code = '<?php if(function_exists("get_the_mixi_check_button_code")) get_the_mixi_check_button_code(); ?>';
     }else{
         $code = 'エラー：「mixiチェック」→「設定」でmixiチェックキーを設定してください';
     }
