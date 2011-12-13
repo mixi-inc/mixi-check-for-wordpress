@@ -115,7 +115,7 @@ function mixi_check_add_head(){
 }
 
 function mixi_check_plugin_menu(){
-    add_menu_page('mixiチェック', 'mixiチェック', 8, basename(__file__), '', plugins_url('m_icon.png',__FILE__));
+    add_menu_page('mixiチェック', 'mixiチェック', 8, basename(__file__), '', plugins_url('mixi_icon.gif',__FILE__));
     add_submenu_page(basename(__file__), '設定', '設定', 'manage_options', basename(__file__), 'mixicheck_plugin_options');
     add_submenu_page(basename(__file__), '埋め込みコード', '埋め込みコード', 'manage_options', widget, 'mixicheck_plugin_widget');
 }
@@ -133,6 +133,7 @@ function mixicheck_plugin_options(){
         if($button_type == "button-2") $button_selected_2 = "selected";
         if($button_type == "button-3") $button_selected_3 = "selected";
         if($button_type == "button-4") $button_selected_4 = "selected";
+        if($button_type == "button-5") $button_selected_5 = "selected";
     }
 
     $html = array(
@@ -179,6 +180,10 @@ function mixicheck_plugin_options(){
         '<p><b>button-4</b></p>',
         '<p><img src="http://img.mixi.jp/img/basic/mixicheck_entry/bt_check_4.png" /></p>',
         '</li>',
+        '<li style="float:left;margin-left:15px;">',
+        '<p><b>button-5</b></p>',
+        '<p><img src="http://img.mixi.jp/img/basic/mixicheck_entry/bt_check_5.png" /></p>',
+        '</li>',
         '</ul>',
         '<p style="clear:left">',
         '<select name="'.MIXI_SETTINGS_KEY_MIXI_CHECK_BUTTON_TYPE.'">',
@@ -187,6 +192,7 @@ function mixicheck_plugin_options(){
         '<option value="button-2" '.$button_selected_2.' >button-2</option>',
         '<option value="button-3" '.$button_selected_3.' >button-3</option>',
         '<option value="button-4" '.$button_selected_4.' >button-4</option>',
+        '<option value="button-5" '.$button_selected_5.' >button-5</option>',
         '</select></p>',
         '<p><input type="submit" class="button-primary" value="Save Changes" /></p>',
         '</form>'
